@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fr.isep.vlacich.thibault.calculatrise">
+    package="fr.isep.vlacich.thibault.calculatrice">
 
     <application
         android:allowBackup="true"

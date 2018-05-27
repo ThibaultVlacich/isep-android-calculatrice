@@ -1,4 +1,4 @@
-package fr.isep.vlacich.thibault.calculatrise;
+package fr.isep.vlacich.thibault.calculatrice;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

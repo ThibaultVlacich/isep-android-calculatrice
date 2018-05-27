@@ -1,4 +1,4 @@
-package fr.isep.vlacich.thibault.calculatrise;
+package fr.isep.vlacich.thibault.calculatrice;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("fr.isep.vlacich.thibault.calculatrise", appContext.getPackageName());
+        assertEquals("fr.isep.vlacich.thibault.calculatrice", appContext.getPackageName());
     }
 }
