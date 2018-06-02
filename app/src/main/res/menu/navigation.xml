@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/navigation_calculator"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_calculator_black_24dp"
         android:title="@string/title_calculator" />
 
     <item
         android:id="@+id/navigation_binary"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_binary_black_24dp"
         android:title="@string/title_binary" />
 
     <item
         android:id="@+id/navigation_conversion"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/ic_conversion_black_24dp"
         android:title="@string/title_conversion" />
 
 </menu>
