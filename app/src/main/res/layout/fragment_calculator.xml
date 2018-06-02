@@ -63,9 +63,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorAccent"
-            android:text="÷"
-            android:textColor="@android:color/white" />
+            android:textColor="@drawable/operation_button_text_color"
+            android:backgroundTint="@drawable/operation_button_tint_color"
+            android:text="÷" />
     </LinearLayout>
 
     <LinearLayout
@@ -99,13 +99,13 @@
             android:text="9" />
 
         <Button
-            android:id="@+id/buttonTimes"
+            android:id="@+id/buttonMultiply"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorAccent"
-            android:text="x"
-            android:textColor="@android:color/white" />
+            android:textColor="@drawable/operation_button_text_color"
+            android:backgroundTint="@drawable/operation_button_tint_color"
+            android:text="x" />
     </LinearLayout>
 
     <LinearLayout
@@ -143,9 +143,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorAccent"
-            android:text="-"
-            android:textColor="@android:color/white" />
+            android:textColor="@drawable/operation_button_text_color"
+            android:backgroundTint="@drawable/operation_button_tint_color"
+            android:text="-" />
     </LinearLayout>
 
     <LinearLayout
@@ -183,9 +183,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorAccent"
-            android:text="+"
-            android:textColor="@android:color/white" />
+            android:textColor="@drawable/operation_button_text_color"
+            android:backgroundTint="@drawable/operation_button_tint_color"
+            android:text="+" />
     </LinearLayout>
 
     <LinearLayout
@@ -216,8 +216,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorAccent"
-            android:text="="
-            android:textColor="@android:color/white" />
+            android:textColor="@drawable/operation_button_text_color"
+            android:backgroundTint="@drawable/operation_button_tint_color"
+            android:text="=" />
     </LinearLayout>
 </LinearLayout>
