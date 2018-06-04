@@ -83,12 +83,21 @@ public class CalculatorFragment extends Fragment {
     }
 
     private void clickedOnClear() {
+        if (lastKey.equals("CLEAR")) {
+            // Clicked two times on CLEAR, reset everything
+            previousNumber   = null;
+            currentOperation = null;
+        }
+
         numberOnScreen = "0";
         updateDisplay();
+
+        lastKey = "CLEAR";
+    }
     }
 
     private void clickedOnDigit(Integer digit) {
-        if (numberOnScreen.equals("0")) {
+        if (numberOnScreen.equals("0") || lastKey.equals("EQUAL")) {
             numberOnScreen = "";
         }
 
@@ -167,8 +176,9 @@ public class CalculatorFragment extends Fragment {
             return;
         }
 
-        previousNumber = numberOnScreen;
-        numberOnScreen = new DecimalFormat("#.##").format(result);
+        previousNumber   = numberOnScreen;
+        numberOnScreen   = new DecimalFormat("#.##").format(result);
+        currentOperation = null;
     }
 
     private void updateDisplay() {
