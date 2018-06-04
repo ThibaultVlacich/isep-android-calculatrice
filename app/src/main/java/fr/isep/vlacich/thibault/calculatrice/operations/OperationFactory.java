@@ -5,6 +5,7 @@ import fr.isep.vlacich.thibault.calculatrice.operations.models.OperationCode;
 
 public class OperationFactory {
 
+    // Binary operations
     public static Operation withCode(OperationCode code, Double firstValue, Double secondValue) {
         switch (code) {
             case PLUS:
@@ -15,6 +16,16 @@ public class OperationFactory {
                 return new MultiplyOperation(firstValue, secondValue);
             case DIVIDE:
                 return new DivideOperation(firstValue, secondValue);
+            default:
+                return null;
+        }
+    }
+
+    // Unary operations
+    public static Operation withCode(OperationCode code, Double value) {
+        switch (code) {
+            case PERCENT:
+                return new PercentOperation(value);
             default:
                 return null;
         }

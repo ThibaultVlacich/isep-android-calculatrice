@@ -1,16 +1,16 @@
 package fr.isep.vlacich.thibault.calculatrice.operations;
 
-import fr.isep.vlacich.thibault.calculatrice.operations.models.BinaryOperation;
+import fr.isep.vlacich.thibault.calculatrice.operations.models.UnaryOperation;
 
-public class PercentOperation extends BinaryOperation {
+public class PercentOperation extends UnaryOperation {
 
-    public PercentOperation(Double firstValue, Double secondValue) {
-        super(firstValue, secondValue);
+    public PercentOperation(Double value) {
+        super(value);
     }
 
     @Override
     public Double getResult() {
-        return (firstValue / 100) * secondValue;
+        return value * 0.01;
     }
 
 }

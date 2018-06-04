@@ -54,6 +54,9 @@ public class CalculatorFragment extends Fragment {
         // Opposite button
         view.findViewById(R.id.buttonOpposite).setOnClickListener((View v) -> clickedOnOpposite());
 
+        // Percent button
+        view.findViewById(R.id.buttonPercent).setOnClickListener((View v) -> clickedOnPercent());
+
         // Set digits listeners
         view.findViewById(R.id.buttonDigit0).setOnClickListener((View v) -> clickedOnDigit(0));
         view.findViewById(R.id.buttonDigit1).setOnClickListener((View v) -> clickedOnDigit(1));
@@ -108,6 +111,30 @@ public class CalculatorFragment extends Fragment {
         updateDisplay();
 
         lastKey = "OPPOSITE";
+    }
+
+    private void clickedOnPercent() {
+        if (numberOnScreen.equals("0")) {
+            return;
+        }
+        
+        Double value;
+
+        try {
+            value = new DecimalFormat().parse(numberOnScreen).doubleValue();
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        Operation operation = OperationFactory.withCode(OperationCode.PERCENT, value);
+        Double result       = operation.getResult();
+
+        numberOnScreen = new DecimalFormat("#.##").format(result);
+
+        updateDisplay();
+
+        lastKey = "PERCENT";
     }
 
     private void clickedOnDigit(Integer digit) {
