@@ -51,6 +51,9 @@ public class CalculatorFragment extends Fragment {
         // Clear button
         view.findViewById(R.id.buttonClear).setOnClickListener((View v) -> clickedOnClear());
 
+        // Opposite button
+        view.findViewById(R.id.buttonOpposite).setOnClickListener((View v) -> clickedOnOpposite());
+
         // Set digits listeners
         view.findViewById(R.id.buttonDigit0).setOnClickListener((View v) -> clickedOnDigit(0));
         view.findViewById(R.id.buttonDigit1).setOnClickListener((View v) -> clickedOnDigit(1));
@@ -94,6 +97,17 @@ public class CalculatorFragment extends Fragment {
 
         lastKey = "CLEAR";
     }
+
+    private void clickedOnOpposite() {
+        if (numberOnScreen.length() > 0 && numberOnScreen.charAt(0) == '-') {
+            numberOnScreen = numberOnScreen.substring(1);
+        } else if (!numberOnScreen.equals("0")) {
+            numberOnScreen = "-"+numberOnScreen;
+        }
+
+        updateDisplay();
+
+        lastKey = "OPPOSITE";
     }
 
     private void clickedOnDigit(Integer digit) {
