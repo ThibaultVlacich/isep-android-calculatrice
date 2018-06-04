@@ -5,16 +5,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
-import java.text.ParseException;
-
 import fr.isep.vlacich.thibault.calculatrice.R;
-import fr.isep.vlacich.thibault.calculatrice.operations.OperationFactory;
-import fr.isep.vlacich.thibault.calculatrice.operations.models.Operation;
-import fr.isep.vlacich.thibault.calculatrice.operations.models.OperationCode;
 
 public class BinaryFragment extends Fragment {
 
