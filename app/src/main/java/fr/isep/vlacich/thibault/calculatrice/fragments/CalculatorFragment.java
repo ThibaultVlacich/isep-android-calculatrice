@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+import java.text.ParseException;
+
 import fr.isep.vlacich.thibault.calculatrice.R;
 import fr.isep.vlacich.thibault.calculatrice.operations.OperationFactory;
 import fr.isep.vlacich.thibault.calculatrice.operations.models.Operation;
@@ -97,8 +100,8 @@ public class CalculatorFragment extends Fragment {
     }
 
     private void clickedOnDecimal() {
-        if (!numberOnScreen.contains(".")) {
-            numberOnScreen += ".";
+        if (!numberOnScreen.contains(",")) {
+            numberOnScreen += ",";
         }
 
         updateDisplay();
@@ -139,8 +142,16 @@ public class CalculatorFragment extends Fragment {
             return;
         }
 
-        Double firstNumber = Double.parseDouble(previousNumber);
-        Double secondNumber = Double.parseDouble(numberOnScreen);
+        Double firstNumber;
+        Double secondNumber;
+
+        try {
+            firstNumber  = new DecimalFormat().parse(previousNumber).doubleValue();
+            secondNumber = new DecimalFormat().parse(numberOnScreen).doubleValue();
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return;
+        }
 
         Operation operation = OperationFactory.withCode(currentOperation, firstNumber, secondNumber);
 
@@ -152,12 +163,12 @@ public class CalculatorFragment extends Fragment {
         Double result = operation.getResult();
 
         if (lastKey == "EQUAL") {
-            numberOnScreen = Double.toString(result);
+            numberOnScreen = new DecimalFormat("#.##").format(result);
             return;
         }
 
         previousNumber = numberOnScreen;
-        numberOnScreen = Double.toString(result);
+        numberOnScreen = new DecimalFormat("#.##").format(result);
     }
 
     private void updateDisplay() {
